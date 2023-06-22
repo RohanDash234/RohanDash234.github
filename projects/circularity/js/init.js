@@ -28,11 +28,9 @@ var init = function (window) {
     }
 
     // TODO 3 / 7 : Call the drawCircle() function
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
-        drawCircle();
+    for(var i = 0; i <= 100; i++) {
+      drawCircle()
+    }
     ////////////////////////////////////////////////////////////
     ///////////////// PROGRAM LOGIC ////////////////////////////
     ////////////////////////////////////////////////////////////
@@ -43,13 +41,12 @@ var init = function (window) {
         and check to see if it has drifted off the screen.         
         */
     function update() {
-
+      for(var i = 0; i < circles.length; i++) {
+        physikz.updatePosition(circles[i])
+       game.checkCirclePosition(circles[i]) 
+      }
       // TODO 4 : Update the circle's position //
-      physikz.updatePosition(circles[0])
-      physikz.updatePosition(circles[1])
-      physikz.updatePosition(circles[2])
-      physikz.updatePosition(circles[3])
-      physikz.updatePosition(circles[4])
+      
       // TODO 5 / 10 : Call game.checkCirclePosition() on your circles.
       game.checkCirclePosition(circles[0])
       game.checkCirclePosition(circles[1])
